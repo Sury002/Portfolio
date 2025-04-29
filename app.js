@@ -1,5 +1,5 @@
 const { useState, useEffect } = React;
-const resumeLink = "https://drive.google.com/your_resume_link_here";
+const resumeLink = "https://drive.google.com/file/d/1Aj8SQ2hqqs6w6-Tc0Huq8OpqJZnVXzJr/view?usp=sharing";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
