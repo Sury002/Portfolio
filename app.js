@@ -262,23 +262,31 @@ function Contact() {
         <p className="mb-8 max-w-2xl mx-auto text-sm md:text-base text-gray-600">
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!
         </p>
+        
         <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
+          {/* Email Button - Works on all devices */}
           <a 
             href="mailto:Suryabalaji791@gmail.com" 
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            <i className="fas fa-envelope"></i> Send Email
+            <i className="fas fa-envelope"></i> 
+            <span className="hidden sm:inline">Send Email</span>
+            <span className="sm:hidden">Email Me</span>
           </a>
+          
           <a 
             href="https://www.linkedin.com/in/suryak24/" 
             target="_blank" 
+            rel="noopener noreferrer"
             className="px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-300 text-white rounded-lg hover:from-blue-500 hover:to-blue-400 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            <i className="fab fa-linkedin"></i> LinkedIn
+            <i className="fab fa-linkedin"></i> 
+            <span className="hidden sm:inline">LinkedIn</span>
+            <span className="sm:hidden">Connect</span>
           </a>
         </div>
       </div>
