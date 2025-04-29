@@ -297,20 +297,6 @@ function Footer() {
         >
           <i className="fab fa-github"></i>
         </a>
-        <a 
-          href="https://www.linkedin.com/in/suryak24/" 
-          target="_blank" 
-          className="text-xl hover:text-blue-500 transition-colors duration-300 hover:-translate-y-1"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a 
-          href="https://insta.com/yourhandle" 
-          target="_blank" 
-          className="text-xl hover:text-blue-500 transition-colors duration-300 hover:-translate-y-1"
-        >
-          <i className="fab fa-instagram"></i>
-        </a>
       </div>
       <p className="mb-2">© {new Date().getFullYear()} Surya. All Rights Reserved.</p>
       <p className="text-xs text-gray-400">Made with ❤️ and React</p>
