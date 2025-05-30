@@ -1,5 +1,5 @@
 const { useState, useEffect } = React;
-const resumeLink = "https://drive.google.com/file/d/1HA_8YDyBDsYIp0-VUGWsYc_HgfxxZWOF/view?usp=sharing";
+const resumeLink = "https://drive.google.com/file/d/1HA_8YDyBDsYIp0-VUGWsYc_HgfxxZWOF/view";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,7 +113,7 @@ function About() {
               data-aos="flip-right"
             >
               <img 
-                src="./Assets/pic.jpeg" 
+                src="./Assets/ProfilePic.jpeg" 
                 alt="Profile" 
                 className="w-full h-full object-cover rounded-full"
               />
@@ -181,8 +181,9 @@ function Projects() {
       tech: "HTML5, Canvas, JavaScript", 
       link: "https://suryassnakegame.netlify.app/", 
       codelink: "https://github.com/Sury002/Snake-Game", 
-      description: "A classic Snake game built with vanilla JavaScript and HTML5 Canvas. Features score tracking and increasing difficulty.",
-      icon: "fas fa-gamepad"
+      description: "A classic Snake game with score tracking feature. Built with vanilla JavaScript and HTML5 Canvas.",
+      icon: "fas fa-gamepad",
+      image: "./Assets/Sanke game.png"
     },
     { 
       name: "Income Expense Tracker", 
@@ -190,7 +191,8 @@ function Projects() {
       link: "https://suryasincomeandexpensecalculator.netlify.app/", 
       codelink: "https://github.com/Sury002/Income-Expense-Calculator", 
       description: "A financial tracking application to monitor income and expenses with visual charts and reports.",
-      icon: "fas fa-wallet"
+      icon: "fas fa-wallet",
+      image: "./Assets/I&E Calculator.png"
     },
     { 
       name: "Movie Search App", 
@@ -198,53 +200,72 @@ function Projects() {
       link: "https://suryasmoviesearchapp.netlify.app/", 
       codelink: "https://github.com/Sury002/movie-search-app", 
       description: "Interactive movie search application that fetches data from OMDB API with filtering capabilities.",
-      icon: "fas fa-film"
+      icon: "fas fa-film",
+      image: "./Assets/Movie Search.png"
     },
     { 
-      name: "Instagram Clone", 
-      tech: "MERN Stack", 
-      link: "#", 
-      codelink: "https://github.com/Sury002/Instagram-Clone", 
-      description: "A full-stack Instagram clone with user authentication, posts, likes, and comments functionality.",
-      icon: "fab fa-instagram"
+      name: "AI Chat Box", 
+      tech: "JavaScript, OpenRouter API", 
+      link: "https://openai-chat-box.netlify.app/", 
+      codelink: "https://github.com/Sury002/AI-Chat-Box", 
+      description: "A responsive chatbot powered by GPT-3.5/4.0 via OpenRouter API, featuring secure serverless backend and token-limited responses for optimal performance.",
+      icon: "fas fa-robot",
+      image: "./Assets/AI chat box.png"
     },
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-20 px-4 bg-gray-100" data-aos="fade-up">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section id="projects" className="py-12 md:py-20 px-4 bg-gray-100" data-aos="fade-up">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-5 pb-2 md:mb-12 text-center gradient-text">My Top Projects</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <div 
               key={project.name} 
-              className="project-card border p-6 rounded-lg shadow hover:shadow-xl bg-white transform hover:-translate-y-1 transition-all duration-300"
+              className="relative rounded-xl shadow-xl overflow-hidden h-[300px] sm:h-[350px] md:h-[400px] transition-all duration-300 hover:shadow-2xl group"
               data-aos="zoom-in"
               data-aos-delay={index * 100}
             >
-              <div className="project-content">
-                <div className="flex items-center mb-4">
-                  <i className={`${project.icon} text-2xl md:text-3xl mr-3 text-blue-500`}></i>
-                  <h3 className="text-xl md:text-2xl font-semibold">{project.name}</h3>
+              {/* Project Image */}
+              <img 
+                src={project.image} 
+                alt={project.name} 
+                className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-50 group-hover:scale-105"
+              />
+              
+              {/* Project Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
+                <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex items-center mb-4">
+                    <i className={`${project.icon} text-2xl md:text-3xl mr-3 text-blue-400`}></i>
+                    <h3 className="text-xl md:text-2xl font-bold text-white">{project.name}</h3>
+                  </div>
+                  <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6">
+                    {project.description}
+                  </p>
+                  <p className="text-xs md:text-sm text-gray-400 mb-4">
+                    <span className="font-semibold text-white">Tech Stack:</span> {project.tech}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-3">
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-1 text-sm md:text-base text-center text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
+                    >
+                      <i className="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a 
+                      href={project.codelink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-1 text-sm md:text-base text-center text-white bg-gray-800 hover:bg-gray-900 px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-800/30"
+                    >
+                      <i className="fab fa-github"></i> Source Code
+                    </a>
+                  </div>
                 </div>
-                <p className="text-sm md:text-base text-gray-600 mb-3">{project.description}</p>
-                <p className="text-xs md:text-sm text-gray-500 mb-4"><span className="font-medium">Tech Stack:</span> {project.tech}</p>
-              </div>
-              <div className="flex mt-auto">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  className="text-sm md:text-base text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded flex items-center gap-1 transition-colors duration-300"
-                >
-                  <i className="fas fa-external-link-alt text-xs md:text-sm"></i> Live Demo
-                </a>
-                <a 
-                  href={project.codelink} 
-                  target="_blank" 
-                  className="ml-3 text-sm md:text-base text-white bg-gray-700 hover:bg-gray-800 px-3 py-1 rounded flex items-center gap-1 transition-colors duration-300"
-                >
-                  <i className="fab fa-github text-xs md:text-sm"></i> Source Code
-                </a>
               </div>
             </div>
           ))}
