@@ -1,5 +1,5 @@
 const { useState, useEffect } = React;
-const resumeLink = "https://drive.google.com/file/d/1HA_8YDyBDsYIp0-VUGWsYc_HgfxxZWOF/view";
+const resumeLink = "https://drive.google.com/file/d/16bis1_aQmdpJTCE5ohC4xH1mfIcY4WIC/view";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
