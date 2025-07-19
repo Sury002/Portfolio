@@ -79,11 +79,11 @@ function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="#projects"
+            href={resumeLink}
             className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:shadow-purple-500/30"
             data-aos="fade-up" data-aos-delay="100"
           >
-            <i className="fas fa-code"></i> View Projects
+            <i className="fas fa-file-alt"></i> View Resume
           </a>
           <a
             href="#contact"
