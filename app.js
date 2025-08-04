@@ -173,7 +173,7 @@ function Skills() {
 
     // Database
     { name: "MongoDB", icon: "fas fa-database", color: "text-green-400", level: "75%", category: "database" },
-    { name: "PostgreSQL", icon: "fas fa-database", color: "text-blue-400", level: "70%", category: "database" },
+    { name: "MySQL", icon: "fas fa-database", color: "text-blue-400", level: "70%", category: "database" },
     { name: "REST API", icon: "fas fa-code", color: "text-green-400", level: "80%", category: "database" },
 
     // Other
