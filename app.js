@@ -1,6 +1,5 @@
 const { useState, useEffect } = React;
-const resumeLink =
-  "https://drive.google.com/file/d/16bis1_aQmdpJTCE5ohC4xH1mfIcY4WIC/view";
+const resumeLink = "https://drive.google.com/file/d/16bis1_aQmdpJTCE5ohC4xH1mfIcY4WIC/view";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -109,6 +108,8 @@ function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
             href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:shadow-purple-500/30"
             data-aos="fade-up"
             data-aos-delay="100"
@@ -129,6 +130,7 @@ function Hero() {
           <a
             href="https://github.com/Sury002"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-2xl text-gray-400 hover:text-purple-400 transition-colors hover:-translate-y-1"
           >
             <i className="fab fa-github"></i>
@@ -136,6 +138,7 @@ function Hero() {
           <a
             href="https://www.linkedin.com/in/suryak24/"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-2xl text-gray-400 hover:text-blue-400 transition-colors hover:-translate-y-1"
           >
             <i className="fab fa-linkedin-in"></i>
@@ -749,39 +752,216 @@ function Projects() {
 }
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', or 'error'
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgvzrvoj", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       id="contact"
       className="py-16 md:py-20 px-4 bg-gray-900"
       data-aos="fade-up"
     >
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-12">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
             Get In Touch
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
+          <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-gray-400">
+            I'm currently available for freelance work and full-time opportunities. 
+            Feel free to reach out or send me a message using the form below!
+          </p>
         </div>
 
-        <p className="mb-8 max-w-2xl mx-auto text-sm md:text-base text-gray-400">
-          I'm currently available for freelance work and full-time
-          opportunities. Feel free to reach out!
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700/30">
+            <h3 className="text-xl font-bold mb-6 text-white">Contact Form</h3>
+            
+            {submitStatus === 'success' ? (
+              <div className="bg-green-900/30 border border-green-800 text-green-400 p-4 rounded-lg mb-6">
+                <i className="fas fa-check-circle mr-2"></i>
+                Thank you for your message! I'll get back to you soon.
+              </div>
+            ) : submitStatus === 'error' ? (
+              <div className="bg-red-900/30 border border-red-800 text-red-400 p-4 rounded-lg mb-6">
+                <i className="fas fa-exclamation-circle mr-2"></i>
+                There was an error sending your message. Please try again or email me directly.
+              </div>
+            ) : null}
 
-        <div className="flex justify-center gap-6">
-          <a
-            href="mailto:Suryabalaji791@gmail.com"
-            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-lg hover:from-purple-700 hover:to-blue-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:shadow-purple-500/30"
-          >
-            <i className="fas fa-envelope"></i> Email Me
-          </a>
-          <a
-            href="https://www.linkedin.com/in/suryak24/"
-            target="_blank"
-            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-400 text-white rounded-lg hover:from-blue-600 hover:to-blue-500 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:shadow-blue-500/30"
-          >
-            <i className="fab fa-linkedin-in"></i> LinkedIn
-          </a>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400 transition-all"
+                  placeholder="Enter your message"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
+                  isSubmitting
+                    ? 'bg-purple-800 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600'
+                } text-white shadow-lg hover:shadow-xl hover:-translate-y-1 hover:shadow-purple-500/30`}
+              >
+                {isSubmitting ? (
+                  <>
+                    <i className="fas fa-spinner fa-spin"></i> Sending...
+                  </>
+                ) : (
+                  <>
+                    <i className="fas fa-paper-plane"></i> Send Message
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700/30">
+              <h3 className="text-xl font-bold mb-6 text-white">Contact Info</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="text-purple-400 text-xl mt-1">
+                    <i className="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-300">Email</h4>
+                    <a 
+                      href="mailto:Suryabalaji791@gmail.com" 
+                      className="text-gray-400 hover:text-purple-400 transition-colors"
+                    >
+                      Suryabalaji791@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-blue-400 text-xl mt-1">
+                    <i className="fab fa-linkedin-in"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-300">LinkedIn</h4>
+                    <a 
+                      href="https://www.linkedin.com/in/suryak24/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-blue-400 transition-colors"
+                    >
+                      linkedin.com/in/suryak24
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-gray-300 text-xl mt-1">
+                    <i className="fab fa-github"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-300">GitHub</h4>
+                    <a 
+                      href="https://github.com/Sury002" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-purple-400 transition-colors"
+                    >
+                      github.com/Sury002
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700/30">
+              <h3 className="text-xl font-bold mb-6 text-white">Let's Connect</h3>
+              <p className="text-gray-400 mb-6">
+                Feel free to reach out for collaborations or just to say hi! I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -796,6 +976,7 @@ function Footer() {
           <a
             href="https://github.com/Sury002"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-xl hover:text-purple-400 transition-colors duration-300 hover:-translate-y-1"
           >
             <i className="fab fa-github"></i>
@@ -803,6 +984,7 @@ function Footer() {
           <a
             href="https://www.linkedin.com/in/suryak24/"
             target="_blank"
+            rel="noopener noreferrer"
             className="text-xl hover:text-blue-400 transition-colors duration-300 hover:-translate-y-1"
           >
             <i className="fab fa-linkedin-in"></i>
