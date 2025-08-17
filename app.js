@@ -601,8 +601,8 @@ function Projects() {
   const projects = [
     {
       name: "Online Counseling Platform",
-      tech: "MERN Stack, Socket.IO, Agora SDK, Stripe",
-      link: "https://wellmindcounseling.netlify.app/",
+      tech: "MERN Stack, Tailwind CSS, Socket.IO, Agora SDK, Stripe",
+      link: "https://wellmindcounseling.netlify.app",
       codelink: "https://github.com/Sury002/Online-Counseling-Platform",
       description:
         "A secure, full-stack MERN application for online therapy with role-based dashboards, real-time chat, video calls, and payment system.",
@@ -610,19 +610,9 @@ function Projects() {
       image: "./Assets/WellMind.png",
       featured: true,
     },
-    {
-      name: "AI Chat Assistant",
-      tech: "MERN Stack, OpenRouter API",
-      link: "https://suryaaichatassistant.netlify.app/",
-      codelink: "https://github.com/Sury002/AI-Chat-Assistant",
-      description:
-        "A modern, responsive chat application with AI-powered responses, conversation history, and a sleek dark/light mode UI.",
-      icon: "fas fa-robot",
-      image: "./Assets/AI Chat Assistant.png",
-    },
-    {
+     {
       name: "Meme Generator",
-      tech: "MERN Stack, Multer, Sharp",
+      tech: "MERN Stack, Tailwind CSS, Multer, Sharp",
       link: "https://suryasmemegenerator.netlify.app",
       codelink: "https://github.com/Sury002/Meme-Generator",
       description:
@@ -631,15 +621,45 @@ function Projects() {
       image: "./Assets/Meme Generator.png",
     },
     {
+      name: "AI Chat Assistant",
+      tech: "MERN Stack, Tailwind CSS, OpenRouter API",
+      link: "https://suryaaichatassistant.netlify.app",
+      codelink: "https://github.com/Sury002/AI-Chat-Assistant",
+      description:
+        "A modern, responsive chat application with AI-powered responses, conversation history, and a sleek dark/light mode UI.",
+      icon: "fas fa-robot",
+      image: "./Assets/AI Chat Assistant.png",
+    },
+   {
+      name: "QR Code Generator",
+      tech: "HTML5, Tailwind CSS, JavaScript(ES6)",
+      link: "https://suryaqrcodegeneratorpro.netlify.app",
+      codelink: "https://github.com/Sury002/QR-Code-Generator-Pro",
+      description:
+        "A feature-rich, modern web application that allows users to create customizable QR codes for various purposes.",
+      icon: "fas fa-gamepad",
+      image: "./Assets/QR Code Generator Pro.png",
+    },
+    {
       name: "Snake Game",
-      tech: "HTML5, Canvas, JavaScript",
-      link: "https://suryassnakegame.netlify.app/",
+      tech: "HTML5, Canvas, CSS3, JavaScript(ES6)",
+      link: "https://suryassnakegame.netlify.app",
       codelink: "https://github.com/Sury002/Snake-Game",
       description:
-        "A classic Snake game with score tracking feature. Built with vanilla JavaScript and HTML5 Canvas.",
+        "A modern, responsive Snake game, playable on all devices with keyboard controls for desktop and touch controls for mobile.",
       icon: "fas fa-gamepad",
-      image: "./Assets/Sanke game.png",
+      image: "./Assets/Snake Game.png",
     },
+    {
+      name: "Food Delivery App",
+      tech: "HTML5, CSS3, JavaScript(ES6), TheMealDB API",
+      link: "https://suryafooddelight.netlify.app",
+      codelink: "https://github.com/Sury002/Food-Delight",
+      description:
+        "A modern, responsive food delivery web application that offers a seamless experience for ordering delicious meals.",
+      icon: "fas fa-gamepad",
+      image: "./Assets/Food Delight.png",
+    }     
   ];
 
   return (
@@ -673,8 +693,8 @@ function Projects() {
               data-aos-delay={index * 100}
             >
               {project.featured && (
-                <div className="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10">
-                  <i className="fas fa-star mr-1"></i> Featured
+                <div className="absolute top-4 right-4 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg z-10">
+                  <i className="fas fa-star"></i> 
                 </div>
               )}
               <img
