@@ -261,6 +261,13 @@ function Skills() {
       category: "frontend",
     },
     {
+      name: "Bootstrap",
+      icon: "devicon-bootstrap-plain colored",
+      color: "text-purple-500",
+      level: "80%",
+      category: "frontend",
+    },
+    {
       name: "Tailwind CSS",
       icon: "devicon-tailwindcss-plain colored",
       color: "text-cyan-400",
@@ -297,6 +304,13 @@ function Skills() {
       level: "80%",
       category: "backend",
     },
+    {
+      name: "REST API",
+      icon: "fas fa-code",
+      color: "text-green-400",
+      level: "80%",
+      category: "backend",
+    },
 
     // Database
     {
@@ -314,9 +328,9 @@ function Skills() {
       category: "database",
     },
     {
-      name: "REST API",
-      icon: "fas fa-code",
-      color: "text-green-400",
+      name: "Mongoose",
+      icon: "fas fa-database",
+      color: "text-red-500",
       level: "80%",
       category: "database",
     },
@@ -335,7 +349,14 @@ function Skills() {
       color: "text-blue-300",
       level: "90%",
       category: "other",
-    }
+    },
+    {
+      name: "Postman",
+      icon: "fas fa-paper-plane", // Sending requests
+      color: "text-orange-500",
+      level: "85%",
+      category: "other",
+    },
   ];
 
   const categories = [
@@ -492,7 +513,7 @@ function Certificates() {
       image: "./Assets/TypeScript.png",
       credentialLink:
         "https://www.guvi.in/share-certificate/B7H8dnY041a1g06U15",
-    }
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -719,7 +740,7 @@ function Projects() {
         "A modern, responsive food delivery web application that offers a seamless experience for ordering delicious meals.",
       icon: "fas fa-motorcycle",
       image: "./Assets/Food Delight.png",
-    }
+    },
   ];
 
   return (
