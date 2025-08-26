@@ -1,5 +1,6 @@
 const { useState, useEffect } = React;
-const resumeLink = "https://drive.google.com/file/d/16bis1_aQmdpJTCE5ohC4xH1mfIcY4WIC/view";
+const resumeLink =
+  "https://drive.google.com/file/d/1qvWBuQ7RTOBkeaMilGquXEPT0Gs-lido/view";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -89,7 +90,7 @@ function Hero() {
           <img
             src="./Assets/ProfilePic.jpeg"
             alt="Profile"
-            className="relative w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-4 border-gray-800 shadow-xl"
+            className="relative w-40 h-40 md:w-60 md:h-60 object-cover rounded-full border-4 border-gray-800 shadow-xl"
           />
         </div>
 
@@ -167,17 +168,17 @@ function About() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3 flex justify-center">
             <div
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-700"
+              className="relative w-64 h-64 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group border border-gray-700"
               data-aos="flip-right"
             >
               <img
-                src="./Assets/ProfilePic.jpeg"
+                src="./Assets\ProfilePic2.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <h3 className="text-white text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  Full Stack Developer
+              <div className="absolute flex justify-center inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                <h3 className="text-green-300 text-3xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  Surya K
                 </h3>
               </div>
             </div>
@@ -261,15 +262,22 @@ function Skills() {
     },
     {
       name: "Tailwind CSS",
-      icon: "fas fa-paint-brush",
+      icon: "devicon-tailwindcss-plain colored",
       color: "text-cyan-400",
       level: "85%",
       category: "frontend",
     },
     {
       name: "Redux",
-      icon: "fas fa-boxes",
+      icon: "devicon-redux-original colored",
       color: "text-purple-400",
+      level: "80%",
+      category: "frontend",
+    },
+    {
+      name: "TypeScript",
+      icon: "devicon-typescript-plain colored",
+      color: "text-blue-500",
       level: "80%",
       category: "frontend",
     },
@@ -277,14 +285,14 @@ function Skills() {
     // Backend
     {
       name: "Node.js",
-      icon: "fab fa-node-js",
+      icon: "devicon-nodejs-plain colored",
       color: "text-green-500",
       level: "80%",
       category: "backend",
     },
     {
       name: "Express",
-      icon: "fas fa-server",
+      icon: "devicon-express-original",
       color: "text-gray-300",
       level: "80%",
       category: "backend",
@@ -293,14 +301,14 @@ function Skills() {
     // Database
     {
       name: "MongoDB",
-      icon: "fas fa-database",
+      icon: "devicon-mongodb-plain colored",
       color: "text-green-400",
       level: "75%",
       category: "database",
     },
     {
       name: "MySQL",
-      icon: "fas fa-database",
+      icon: "devicon-mysql-plain colored",
       color: "text-blue-400",
       level: "70%",
       category: "database",
@@ -316,7 +324,7 @@ function Skills() {
     // Other
     {
       name: "Git",
-      icon: "fab fa-git-alt",
+      icon: "devicon-git-plain colored",
       color: "text-orange-500",
       level: "85%",
       category: "other",
@@ -327,7 +335,7 @@ function Skills() {
       color: "text-blue-300",
       level: "90%",
       category: "other",
-    },
+    }
   ];
 
   const categories = [
@@ -420,54 +428,71 @@ function Skills() {
 function Certificates() {
   const certificates = [
     {
-      title: "IIT-M Pravartak certified Full Stack Development Course with AI Tools",
+      title:
+        "IIT-M Pravartak certified Full Stack Development Course with AI Tools",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/IIT-M Pravartak certified Full Stack Development Course with AI Tools.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/p53TIxsEDb9jhVb2",
+      image:
+        "./Assets/IIT-M Pravartak certified Full Stack Development Course with AI Tools.png",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/p53TIxsEDb9jhVb2",
     },
     {
       title: "HTML, CSS, and Tailwind CSS",
       issuer: "Guvi",
       date: "2025",
       image: "./Assets/HTML, CSS & Tailwind CSS.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/Hjn9GjWHS2FS8LbW",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/Hjn9GjWHS2FS8LbW",
     },
     {
       title: "JavaScript Basics",
       issuer: "Guvi",
       date: "2025",
       image: "./Assets/JS Basics.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/ZUFgiemUELBvxbNx",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/ZUFgiemUELBvxbNx",
     },
     {
       title: "AdvancedJS",
       issuer: "Guvi",
       date: "2025",
       image: "./Assets/Advanced JS.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/EEhSHRFDLsP6qYfn",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/EEhSHRFDLsP6qYfn",
     },
     {
       title: "ReactJS",
       issuer: "Guvi",
       date: "2025",
       image: "./Assets/ReactJS.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/HfoIqpSiIwUVQpsb",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/HfoIqpSiIwUVQpsb",
     },
     {
       title: "Node JS",
       issuer: "Guvi",
       date: "2025",
       image: "./Assets/NodeJS.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/iNEWssqwvh9zLxsx",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/iNEWssqwvh9zLxsx",
     },
     {
       title: "Database",
       issuer: "Guvi",
       date: "2025",
       image: "./Assets/Database.png",
-      credentialLink: "https://v2.zenclass.in/certificateDownload/7VkwA8LP7PgTOq1W",
+      credentialLink:
+        "https://v2.zenclass.in/certificateDownload/7VkwA8LP7PgTOq1W",
     },
+    {
+      title: "TypeScript",
+      issuer: "Guvi",
+      date: "2025",
+      image: "./Assets/TypeScript.png",
+      credentialLink:
+        "https://www.guvi.in/share-certificate/B7H8dnY041a1g06U15",
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -493,7 +518,11 @@ function Certificates() {
   };
 
   return (
-    <section id="certificates" className="py-16 md:py-20 px-4 bg-gray-800" data-aos="fade-up">
+    <section
+      id="certificates"
+      className="py-16 md:py-20 px-4 bg-gray-800"
+      data-aos="fade-up"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
@@ -514,7 +543,7 @@ function Certificates() {
           >
             <i className="fas fa-chevron-left text-xl"></i>
           </button>
-          
+
           <button
             onClick={nextCertificate}
             className="absolute right-0 md:-right-12 top-1/2 transform -translate-y-1/2 z-10 bg-gray-800/80 hover:bg-gray-700/90 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 hover:text-purple-400"
@@ -524,8 +553,12 @@ function Certificates() {
           </button>
 
           {/* Certificate Card with Zoom Effect */}
-          <div className={`bg-gray-700/50 rounded-xl overflow-hidden shadow-2xl border border-gray-600 hover:border-purple-500/50 transition-all duration-300 ${isAnimating ? 'opacity-70' : 'opacity-100'}`}>
-            <div 
+          <div
+            className={`bg-gray-700/50 rounded-xl overflow-hidden shadow-2xl border border-gray-600 hover:border-purple-500/50 transition-all duration-300 ${
+              isAnimating ? "opacity-70" : "opacity-100"
+            }`}
+          >
+            <div
               className="relative h-64 md:h-[500px] bg-gray-900 overflow-hidden"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -540,10 +573,12 @@ function Certificates() {
                   <img
                     src={certificates[currentIndex].image}
                     alt={certificates[currentIndex].title}
-                    className={`max-w-full max-h-full object-contain transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'} ${isHovered ? 'scale-110' : 'scale-100'}`}
+                    className={`max-w-full max-h-full object-contain transition-all duration-500 ease-in-out ${
+                      isAnimating ? "opacity-0" : "opacity-100"
+                    } ${isHovered ? "scale-110" : "scale-100"}`}
                     style={{
-                      aspectRatio: '3/2',
-                      objectPosition: 'center',
+                      aspectRatio: "3/2",
+                      objectPosition: "center",
                     }}
                   />
                 </div>
@@ -556,14 +591,15 @@ function Certificates() {
                     {certificates[currentIndex].title}
                   </h3>
                   <p className="text-gray-400">
-                    {certificates[currentIndex].issuer} • {certificates[currentIndex].date}
+                    {certificates[currentIndex].issuer} •{" "}
+                    {certificates[currentIndex].date}
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-gray-300 bg-gray-800 px-3 py-1 rounded-full text-sm whitespace-nowrap">
                     {currentIndex + 1} / {certificates.length}
                   </span>
-                  <a 
+                  <a
                     href={certificates[currentIndex].credentialLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -587,7 +623,11 @@ function Certificates() {
                 setCurrentIndex(index);
                 setTimeout(() => setIsAnimating(false), 500);
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index ? 'bg-purple-500 w-6' : 'bg-gray-600 hover:bg-gray-500'}`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentIndex === index
+                  ? "bg-purple-500 w-6"
+                  : "bg-gray-600 hover:bg-gray-500"
+              }`}
               aria-label={`Go to certificate ${index + 1}`}
             />
           ))}
@@ -610,7 +650,7 @@ function Projects() {
       image: "./Assets/WellMind.png",
       featured: true,
     },
-     {
+    {
       name: "Meme Generator",
       tech: "MERN Stack, Tailwind CSS, Multer, Sharp",
       link: "https://suryasmemegenerator.netlify.app",
@@ -630,14 +670,14 @@ function Projects() {
       icon: "fas fa-robot",
       image: "./Assets/AI Chat Assistant.png",
     },
-   {
+    {
       name: "QR Code Generator",
       tech: "HTML5, Tailwind CSS, JavaScript(ES6)",
       link: "https://suryaqrcodegeneratorpro.netlify.app",
       codelink: "https://github.com/Sury002/QR-Code-Generator-Pro",
       description:
         "A feature-rich, modern web application that allows users to create customizable QR codes for various purposes.",
-      icon: "fas fa-gamepad",
+      icon: "fas fa-qrcode",
       image: "./Assets/QR Code Generator Pro.png",
     },
     {
@@ -651,15 +691,35 @@ function Projects() {
       image: "./Assets/Snake Game.png",
     },
     {
+      name: "Income Expense Calculator",
+      tech: "HTML5, Tailwind CSS, JavaScript(ES6)",
+      link: "https://suryasincomeandexpensecalculator.netlify.app",
+      codelink: "https://github.com/Sury002/Income-Expense-Calculator",
+      description:
+        "A simple, responsive Income Expense Calculator web application to manage your personal finances.",
+      icon: "fas fa-coins",
+      image: "./Assets/I&E Calculator.png",
+    },
+    {
+      name: "Recipe App",
+      tech: "HTML5, Tailwind CSS, JavaScript(ES6)",
+      link: "tastybookrecipeapp.netlify.app",
+      codelink: "https://github.com/Sury002/Recipe-App",
+      description:
+        "A modern, responsive recipe explorer. Search, filter, view detailed recipes, and save your favorites",
+      icon: "fas fa-utensils",
+      image: "./Assets/Recipe.png",
+    },
+    {
       name: "Food Delivery App",
       tech: "HTML5, CSS3, JavaScript(ES6), TheMealDB API",
       link: "https://suryafooddelight.netlify.app",
       codelink: "https://github.com/Sury002/Food-Delight",
       description:
         "A modern, responsive food delivery web application that offers a seamless experience for ordering delicious meals.",
-      icon: "fas fa-gamepad",
+      icon: "fas fa-motorcycle",
       image: "./Assets/Food Delight.png",
-    }     
+    }
   ];
 
   return (
@@ -694,7 +754,7 @@ function Projects() {
             >
               {project.featured && (
                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg z-10">
-                  <i className="fas fa-star"></i> 
+                  <i className="fas fa-star"></i>
                 </div>
               )}
               <img
@@ -753,18 +813,18 @@ function Projects() {
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', or 'error'
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -777,19 +837,19 @@ function Contact() {
       const response = await fetch("https://formspree.io/f/xgvzrvoj", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        setSubmitStatus('error');
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -808,30 +868,35 @@ function Contact() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
           <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-gray-400">
-            I'm currently available for freelance work and full-time opportunities. 
-            Feel free to reach out or send me a message using the form below!
+            I'm currently available for freelance work and full-time
+            opportunities. Feel free to reach out or send me a message using the
+            form below!
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700/30">
             <h3 className="text-xl font-bold mb-6 text-white">Contact Form</h3>
-            
-            {submitStatus === 'success' ? (
+
+            {submitStatus === "success" ? (
               <div className="bg-green-900/30 border border-green-800 text-green-400 p-4 rounded-lg mb-6">
                 <i className="fas fa-check-circle mr-2"></i>
                 Thank you for your message! I'll get back to you soon.
               </div>
-            ) : submitStatus === 'error' ? (
+            ) : submitStatus === "error" ? (
               <div className="bg-red-900/30 border border-red-800 text-red-400 p-4 rounded-lg mb-6">
                 <i className="fas fa-exclamation-circle mr-2"></i>
-                There was an error sending your message. Please try again or email me directly.
+                There was an error sending your message. Please try again or
+                email me directly.
               </div>
             ) : null}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Your Name
                 </label>
                 <input
@@ -847,7 +912,10 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Your Email
                 </label>
                 <input
@@ -863,7 +931,10 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Your Message
                 </label>
                 <textarea
@@ -883,8 +954,8 @@ function Contact() {
                 disabled={isSubmitting}
                 className={`w-full px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
                   isSubmitting
-                    ? 'bg-purple-800 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600'
+                    ? "bg-purple-800 cursor-not-allowed"
+                    : "bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600"
                 } text-white shadow-lg hover:shadow-xl hover:-translate-y-1 hover:shadow-purple-500/30`}
               >
                 {isSubmitting ? (
@@ -902,7 +973,9 @@ function Contact() {
 
           <div className="space-y-8">
             <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700/30">
-              <h3 className="text-xl font-bold mb-6 text-white">Contact Info</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">
+                Contact Info
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="text-purple-400 text-xl mt-1">
@@ -910,8 +983,8 @@ function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-300">Email</h4>
-                    <a 
-                      href="mailto:Suryabalaji791@gmail.com" 
+                    <a
+                      href="mailto:Suryabalaji791@gmail.com"
                       className="text-gray-400 hover:text-purple-400 transition-colors"
                     >
                       Suryabalaji791@gmail.com
@@ -925,8 +998,8 @@ function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-300">LinkedIn</h4>
-                    <a 
-                      href="https://www.linkedin.com/in/suryak24/" 
+                    <a
+                      href="https://www.linkedin.com/in/suryak24/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
@@ -942,8 +1015,8 @@ function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-300">GitHub</h4>
-                    <a 
-                      href="https://github.com/Sury002" 
+                    <a
+                      href="https://github.com/Sury002"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-purple-400 transition-colors"
@@ -956,9 +1029,13 @@ function Contact() {
             </div>
 
             <div className="bg-gray-800/50 p-6 md:p-8 rounded-xl shadow-lg border border-gray-700/30">
-              <h3 className="text-xl font-bold mb-6 text-white">Let's Connect</h3>
+              <h3 className="text-xl font-bold mb-6 text-white">
+                Let's Connect
+              </h3>
               <p className="text-gray-400 mb-6">
-                Feel free to reach out for collaborations or just to say hi! I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+                Feel free to reach out for collaborations or just to say hi! I'm
+                always open to discussing new projects, creative ideas or
+                opportunities to be part of your vision.
               </p>
             </div>
           </div>
