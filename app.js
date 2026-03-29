@@ -29,12 +29,12 @@ function Navbar() {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-2 mx-4 md:mx-10">
-        {["Home", "About", "Skills", "Certificates", "Projects", "Contact"].map(
+        {["Home", "About", "Services", "Skills", "Certificates", "Projects", "Contact"].map(
           (item) => (
             <a
               href={`#${item.toLowerCase()}`}
               key={item}
-              className="nav-link text-lg font-medium hover:text-purple-400 transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-gray-800"
+              className="nav-link text-lg font-medium hover:text-p+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++urple-400 transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-gray-800"
             >
               {item}
             </a>
@@ -57,6 +57,7 @@ function Navbar() {
           {[
             "Home",
             "About",
+            "Services",
             "Skills",
             "Certificates",
             "Projects",
@@ -101,10 +102,10 @@ function Hero() {
         <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto px-4 text-gray-400">
           I'm a{" "}
           <span className="font-semibold text-purple-400">
-            Full Stack Developer
+            Full Stack Developer & Freelancer
           </span>{" "}
-          passionate about building modern web applications with clean code and
-          intuitive interfaces.
+          specializing in building high-performance, industry-specific web
+          applications that drive business growth.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
@@ -172,7 +173,7 @@ function About() {
               data-aos="flip-right"
             >
               <img
-                src="./Assets\ProfilePic2.jpg"
+                src="./Assets/ProfilePic2.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
               />
@@ -217,12 +218,86 @@ function About() {
                 solutions.
               </p>
               <p className="text-base md:text-lg text-gray-300">
-                When I'm not coding, I enjoy contributing to open-source
-                projects, learning new technologies, and sharing knowledge with
-                other developers.
+                Currently, I am <span className="text-purple-400 font-bold">available for freelance projects</span>. I help businesses and individuals bring their ideas to life through robust, scalable, and beautifully designed web solutions.
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  const services = [
+    {
+      title: "Web Development",
+      description:
+        "Building responsive, high-performance web applications using MERN stack and modern technologies.",
+      icon: "fas fa-code",
+      color: "bg-blue-500",
+    },
+    {
+      title: "UI/UX Design",
+      description:
+        "Designing intuitive, user-friendly interfaces that provide a seamless user experience.",
+      icon: "fas fa-paint-brush",
+      color: "bg-purple-500",
+    },
+    {
+      title: "API Design & Integration",
+      description:
+        "Developing robust, scalable backend systems and integrating third-party services.",
+      icon: "fas fa-plug",
+      color: "bg-green-500",
+    },
+    {
+      title: "Technical Consulting",
+      description:
+        "Providing guidance on project structure, technology choice, and performance optimization.",
+      icon: "fas fa-lightbulb",
+      color: "bg-yellow-500",
+    },
+  ];
+
+  return (
+    <section
+      id="services"
+      className="py-16 md:py-20 px-4 bg-gray-900"
+      data-aos="fade-up"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            My Services
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
+          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+            Providing end-to-end development services for modern businesses.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="p-8 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl group"
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
+            >
+              <div
+                className={`${service.color} w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl mb-6 shadow-lg transform group-hover:scale-110 transition-transform`}
+              >
+                <i className={service.icon}></i>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-gray-400 leading-relaxed text-sm">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -453,8 +528,7 @@ function Certificates() {
         "IIT-M Pravartak certified Full Stack Development Course with AI Tools",
       issuer: "Guvi",
       date: "2025",
-      image:
-        "./Assets/IIT-M Pravartak certified Full Stack Development Course with AI Tools.png",
+      image: "./Assets/Cert_FullStack.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/p53TIxsEDb9jhVb2",
     },
@@ -462,7 +536,7 @@ function Certificates() {
       title: "HTML, CSS, and Tailwind CSS",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/HTML, CSS & Tailwind CSS.png",
+      image: "./Assets/Cert_Frontend.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/Hjn9GjWHS2FS8LbW",
     },
@@ -470,7 +544,7 @@ function Certificates() {
       title: "JavaScript Basics",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/JS Basics.png",
+      image: "./Assets/Cert_JS_Basics.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/ZUFgiemUELBvxbNx",
     },
@@ -478,7 +552,7 @@ function Certificates() {
       title: "AdvancedJS",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/Advanced JS.png",
+      image: "./Assets/Cert_JS_Advanced.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/EEhSHRFDLsP6qYfn",
     },
@@ -486,7 +560,7 @@ function Certificates() {
       title: "ReactJS",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/ReactJS.png",
+      image: "./Assets/Cert_React.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/HfoIqpSiIwUVQpsb",
     },
@@ -494,7 +568,7 @@ function Certificates() {
       title: "Node JS",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/NodeJS.png",
+      image: "./Assets/Cert_Node.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/iNEWssqwvh9zLxsx",
     },
@@ -502,7 +576,7 @@ function Certificates() {
       title: "Database",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/Database.png",
+      image: "./Assets/Cert_Database.png",
       credentialLink:
         "https://v2.zenclass.in/certificateDownload/7VkwA8LP7PgTOq1W",
     },
@@ -510,7 +584,7 @@ function Certificates() {
       title: "TypeScript",
       issuer: "Guvi",
       date: "2025",
-      image: "./Assets/TypeScript.png",
+      image: "./Assets/Cert_TypeScript.png",
       credentialLink:
         "https://www.guvi.in/share-certificate/B7H8dnY041a1g06U15",
     },
@@ -661,6 +735,38 @@ function Certificates() {
 function Projects() {
   const projects = [
     {
+      name: "FitZone Elite",
+      tech: "React, Tailwind CSS, Framer Motion, AOS",
+      link: "https://fitzoneelite.netlify.app/",
+      description:
+        "A high-end, responsive landing page for a premium fitness center. Features workout plans, trainer profiles, and membership tiers with a sleek dark aesthetic.",
+      icon: "fas fa-dumbbell",
+      image: "./Assets/GymDemo.png",
+      category: "business",
+      featured: true,
+    },
+    {
+      name: "DentalCare Pro",
+      tech: "MERN Stack, FullCalendar, Cloudinary, JWT",
+      link: "#",
+      description:
+        "A comprehensive clinic management system. Includes appointment scheduling, patient history tracking, and an automated notification system.",
+      icon: "fas fa-tooth",
+      image: "./Assets/DentalDemo.png",
+      category: "business",
+      featured: true,
+    },
+    {
+      name: "EcoHome Real Estate",
+      tech: "React, Node.js, Leaflet Maps, MongoDB",
+      link: "#",
+      description:
+        "A modern real estate platform with high-quality property listings, advanced search filters, and interactive map integration.",
+      icon: "fas fa-home",
+      image: "./Assets/RealEstateDemo.png",
+      category: "business",
+    },
+    {
       name: "Online Counseling Platform",
       tech: "MERN Stack, Tailwind CSS, Socket.IO, Agora SDK, Stripe",
       link: "https://wellmindcounseling.netlify.app",
@@ -669,6 +775,7 @@ function Projects() {
         "A secure, full-stack MERN application for online therapy with role-based dashboards, real-time chat, video calls, and payment system.",
       icon: "fas fa-comments",
       image: "./Assets/WellMind.png",
+      category: "fullstack",
       featured: true,
     },
     {
@@ -680,6 +787,7 @@ function Projects() {
         "A full-stack application that allows users to upload images and instantly create hilarious memes with auto-generated captions.",
       icon: "fas fa-image",
       image: "./Assets/Meme Generator.png",
+      category: "fullstack",
     },
     {
       name: "AI Chat Assistant",
@@ -690,6 +798,7 @@ function Projects() {
         "A modern, responsive chat application with AI-powered responses, conversation history, and a sleek dark/light mode UI.",
       icon: "fas fa-robot",
       image: "./Assets/AI Chat Assistant.png",
+      category: "fullstack",
     },
     {
       name: "QR Code Generator",
@@ -700,6 +809,7 @@ function Projects() {
         "A feature-rich, modern web application that allows users to create customizable QR codes for various purposes.",
       icon: "fas fa-qrcode",
       image: "./Assets/QR Code Generator Pro.png",
+      category: "frontend",
     },
     {
       name: "Snake Game",
@@ -710,6 +820,7 @@ function Projects() {
         "A modern, responsive Snake game, playable on all devices with keyboard controls for desktop and touch controls for mobile.",
       icon: "fas fa-gamepad",
       image: "./Assets/Snake Game.png",
+      category: "frontend",
     },
     {
       name: "Income Expense Calculator",
@@ -720,6 +831,7 @@ function Projects() {
         "A simple, responsive Income Expense Calculator web application to manage your personal finances.",
       icon: "fas fa-coins",
       image: "./Assets/I&E Calculator.png",
+      category: "frontend",
     },
     {
       name: "Recipe App",
@@ -730,6 +842,7 @@ function Projects() {
         "A modern, responsive recipe explorer. Search, filter, view detailed recipes, and save your favorites",
       icon: "fas fa-utensils",
       image: "./Assets/Recipe.png",
+      category: "frontend",
     },
     {
       name: "Food Delivery App",
@@ -740,8 +853,23 @@ function Projects() {
         "A modern, responsive food delivery web application that offers a seamless experience for ordering delicious meals.",
       icon: "fas fa-motorcycle",
       image: "./Assets/Food Delight.png",
+      category: "frontend",
     },
   ];
+
+  const categories = [
+    { id: "all", name: "All Projects" },
+    { id: "business", name: "Business Demos" },
+    { id: "fullstack", name: "Full-Stack" },
+    { id: "frontend", name: "Frontend" },
+  ];
+
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredProjects =
+    activeCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section
@@ -756,13 +884,29 @@ function Projects() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Here are some of my recent projects showcasing my full-stack
-            capabilities
+            A showcase of my professional client work, full-stack applications, and niche business solutions.
           </p>
         </div>
 
+        {/* Project Category Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeCategory === category.id
+                  ? "bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg shadow-purple-500/20"
+                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.name}
               className={`relative rounded-2xl overflow-hidden h-[350px] md:h-[400px] transition-all duration-300 hover:shadow-2xl group border ${
@@ -813,14 +957,16 @@ function Projects() {
                     >
                       <i className="fas fa-external-link-alt"></i> Live Demo
                     </a>
-                    <a
-                      href={project.codelink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-sm md:text-base text-center text-white bg-gray-800 hover:bg-gray-900 px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-800/30"
-                    >
-                      <i className="fab fa-github"></i> Source Code
-                    </a>
+                    {project.codelink && project.codelink !== "#" && (
+                      <a
+                        href={project.codelink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-sm md:text-base text-center text-white bg-gray-800 hover:bg-gray-900 px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gray-800/30"
+                      >
+                        <i className="fab fa-github"></i> Source Code
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1116,6 +1262,7 @@ function App() {
         <Navbar />
         <Hero />
         <About />
+        <Services />
         <Skills />
         <Certificates />
         <Projects />
