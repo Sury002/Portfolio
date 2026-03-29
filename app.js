@@ -748,7 +748,7 @@ function Projects() {
     {
       name: "DentalCare Pro",
       tech: "MERN Stack, FullCalendar, Cloudinary, JWT",
-      link: "#",
+      link: "https://dentalproclinic.netlify.app/",
       description:
         "A comprehensive clinic management system. Includes appointment scheduling, patient history tracking, and an automated notification system.",
       icon: "fas fa-tooth",
