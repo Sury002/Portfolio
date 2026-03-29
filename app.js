@@ -941,12 +941,14 @@ function Projects() {
                   <p className="text-sm md:text-base text-gray-300 mb-4 md:mb-6">
                     {project.description}
                   </p>
-                  <p className="text-xs md:text-sm text-gray-400 mb-4">
-                    <span className="font-semibold text-white">
-                      Tech Stack:
-                    </span>{" "}
-                    {project.tech}
-                  </p>
+                  {project.category !== "business" && (
+                    <p className="text-xs md:text-sm text-gray-400 mb-4">
+                      <span className="font-semibold text-white">
+                        Tech Stack:
+                      </span>{" "}
+                      {project.tech}
+                    </p>
+                  )}
 
                   <div className="flex flex-wrap gap-3">
                     <a
