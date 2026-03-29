@@ -765,6 +765,7 @@ function Projects() {
       icon: "fas fa-home",
       image: "./Assets/RealEstateDemo.png",
       category: "business",
+      comingSoon: true,
     },
     {
       name: "Online Counseling Platform",
@@ -922,6 +923,11 @@ function Projects() {
                   <i className="fas fa-star"></i>
                 </div>
               )}
+              {project.comingSoon && (
+                <div className="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10 animate-pulse">
+                  <i className="fas fa-clock mr-1"></i> Coming Soon
+                </div>
+              )}
               <img
                 src={project.image}
                 alt={project.name}
@@ -951,14 +957,20 @@ function Projects() {
                   )}
 
                   <div className="flex flex-wrap gap-3">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-sm md:text-base text-center text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
-                    >
-                      <i className="fas fa-external-link-alt"></i> Live Demo
-                    </a>
+                    {project.comingSoon ? (
+                      <span className="flex-1 text-sm md:text-base text-center text-gray-400 bg-gray-700/50 cursor-not-allowed px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 border border-gray-600">
+                        <i className="fas fa-hammer"></i> Coming Soon
+                      </span>
+                    ) : (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 text-sm md:text-base text-center text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 md:py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
+                      >
+                        <i className="fas fa-external-link-alt"></i> Live Demo
+                      </a>
+                    )}
                     {project.codelink && project.codelink !== "#" && (
                       <a
                         href={project.codelink}
