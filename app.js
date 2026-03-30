@@ -735,6 +735,17 @@ function Certificates() {
 function Projects() {
   const projects = [
     {
+      name: "FreshMart Elite",
+      tech: "HTML, Vanilla CSS, JavaScript, AOS, Font Awesome",
+      link: "https://freshmartelite.netlify.app/",
+      description:
+        "A premium, luxury supermarket landing page with a high-end emerald aesthetic. Features smooth scroll-reveal animations, responsive mobile navigation, and curated product layouts.",
+      icon: "fas fa-leaf",
+      image: "./Assets/SupermarketDemo.png",
+      category: "business",
+      featured: true,
+    },
+    {
       name: "FitZone Elite",
       tech: "React, Tailwind CSS, Framer Motion, AOS",
       link: "https://fitzoneelite.netlify.app/",
