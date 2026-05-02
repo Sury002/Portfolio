@@ -1,106 +1,258 @@
+:root {
+  --primary: #c2a05d;
+  --secondary: #1c1917;
+  --accent: #78716c;
+  --dark: #44403c;
+  --light: #f5f5f4;
+  --glass: rgba(255, 255, 255, 0.35);
+  --glass-border: rgba(194, 160, 93, 0.15);
+  --text-dim: #57534e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-    scroll-behavior: smooth;
-  }
-  
-  .project-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: all 0.3s ease;
-  }
-  .project-content {
-    flex-grow: 1;
-  }
-  .nav-link {
-    position: relative;
-    padding: 0.5rem 1rem;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #3b82f6;
-    transition: width 0.3s ease;
-  }
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  .gradient-text {
-    background: linear-gradient(90deg, #3b82f6, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .skill-card:hover {
-    transform: translateY(-5px);
-  }
+  scroll-behavior: initial;
+}
 
-  /* Premium Additions */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #111827;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #374151;
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #4b5563;
-  }
+body {
+  background-color: var(--light);
+  color: var(--secondary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  position: relative;
+}
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 50;
+}
 
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
+h1, h2, h3, h4, .font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
 
-  .glass-card {
-    background: rgba(31, 41, 55, 0.4);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
 
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
-  }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(194, 160, 93, 0.4), rgba(194, 160, 93, 0.15));
+  border-radius: 10px;
+}
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(194, 160, 93, 0.6), rgba(194, 160, 93, 0.3));
+}
 
-  .animate-fadeIn {
-    animation: fadeIn 0.5s ease-out forwards;
-  }
+/* ── Premium Glassmorphism ───────────────────────────────────── */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
 
-  .wave {
-    display: inline-block;
-  }
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow:
+    0 24px 48px rgba(194, 160, 93, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
 
-  @keyframes waving-hand {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    100% { transform: rotate(0deg); }
-  }
+.glass-nav {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(194, 160, 93, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
 
-  .animate-waving-hand {
-    animation: waving-hand 2s ease-in-out infinite;
-    transform-origin: 70% 70%;
+/* ── Typography ──────────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #1c1917 0%, #57534e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-primary-gradient {
+  background: linear-gradient(135deg, #c2a05d 0%, #96773b 50%, #c2a05d 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Layout ──────────────────────────────────────────────────── */
+.section-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section transitions */
+.content-overlay {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.content-overlay.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(194, 160, 93, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(194, 160, 93, 0.3); }
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ── Projects Grid ───────────────────────────────────────────── */
+.project-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card img {
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  background: linear-gradient(to top, rgba(28, 25, 23, 0.85) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 2rem 1rem;
   }
+}
+
+/* ── Loader ──────────────────────────────────────────────────── */
+#loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #c2a05d 0%, #a18349 100%);
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 20px rgba(194, 160, 93, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(194, 160, 93, 0.4);
+  filter: brightness(1.08);
+}
+
+.btn-outline {
+  border: 1.5px solid rgba(194, 160, 93, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary);
+}
+
+.btn-outline:hover {
+  background: rgba(194, 160, 93, 0.08);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ── Navigation Link ─────────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
