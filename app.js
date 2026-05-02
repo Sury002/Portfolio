@@ -998,7 +998,6 @@ function SplitLanding({ onSelect }) {
     <div className="split-landing">
       <div className="split-side side-engineer" onClick={() => onSelect('engineer')}>
         <div className="split-content">
-          <div className="text-[10px] font-black tracking-[0.5em] text-blue-400 mb-4 uppercase">Identity 01</div>
           <h2 className="text-6xl font-black mb-6">SURYA K</h2>
           <p className="text-white/40 font-bold tracking-widest mb-10 uppercase">Software Engineer</p>
           <button className="btn-premium">View Professional Work</button>
@@ -1006,7 +1005,6 @@ function SplitLanding({ onSelect }) {
       </div>
       <div className="split-side side-business" onClick={() => onSelect('business')}>
         <div className="split-content">
-          <div className="text-[10px] font-black tracking-[0.5em] text-orange-400 mb-4 uppercase">Identity 02</div>
           <h2 className="text-6xl font-black mb-6">DEVTACTIX</h2>
           <p className="text-white/40 font-bold tracking-widest mb-10 uppercase">Freelance Brand</p>
           <button className="btn-premium">Start A Project</button>
