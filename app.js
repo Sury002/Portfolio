@@ -526,7 +526,7 @@ function ProjectGrid({ projects, title }) {
       <div className="grid lg:grid-cols-2 gap-12 reveal">
         {projects.map((p, i) => (
           <div key={i} className="group relative overflow-hidden rounded-[2.5rem] border border-white/10 aspect-video glass-panel">
-            <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-all duration-1000 scale-110 group-hover:scale-100" />
+            <img src={p.img} alt={p.name} className="w-full h-full object-cover object-center transition-all duration-1000 scale-100 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-12 flex flex-col justify-end backdrop-blur-sm">
               <div className="text-[10px] font-black text-theme tracking-[0.4em] uppercase mb-4">{p.category}</div>
               <h3 className="text-4xl font-black text-white mb-8 uppercase tracking-tighter">{p.name}</h3>
@@ -631,7 +631,7 @@ function EngineerAbout() {
             <p>While I started with a strong focus on front-end development, I now design complete systems including <span className="text-ink-900 font-semibold">scalable back-end architectures</span> and real-time database solutions.</p>
           </div>
           <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/[0.06]">
-            {[{n:'15+', l:'Deployed'}, {n:'100%', l:'Precision'}, {n:'MERN', l:'Core Stack'}, {n:'24/7', l:'Support'}].map(s => (
+            {[{n:'15+', l:'Deployed'}, {n:'100%', l:'Precision'}, {n:'MERN/MEAN', l:'Core Stack'}, {n:'24/7', l:'Support'}].map(s => (
               <div key={s.l}>
                 <div className="text-3xl font-black text-ink-900">{s.n}</div>
                 <div className="text-[10px] font-bold tracking-[0.3em] text-ink-300 uppercase mt-1">{s.l}</div>
@@ -741,6 +741,11 @@ function App() {
     { name: "Retro Snake", img: "./Assets/Snake Game.png", category: "Creative", link: "https://retrosnake01.netlify.app/" },
   ];
 
+  const business3DProjects = [
+    { name: "Roasted Coffee 3D", img: "./Assets/Coffee3D.png", category: "3D Experience", link: "https://roastedcofee3d.netlify.app/" },
+    { name: "Elite Gym 3D", img: "./Assets/GYM3D.png", category: "3D Experience", link: "https://elitegym3d.netlify.app/" },
+  ];
+
   if (loading) return <div id="loader"><div className="loader-track"><div className="loader-bar" style={{ width: '100%', transition: 'width 2s ease' }}></div></div></div>;
   if (!mode) return <SplitLanding onSelect={setMode} />;
 
@@ -843,7 +848,7 @@ function App() {
               <EngineerAbout />
               <MetricsRow metrics={[
                 { label: 'Projects Shipped', value: 15, suffix: '+', caption: 'In production today' },
-                { label: 'Years Coding',    value: 4,  suffix: '+', caption: 'Full-stack focused' },
+                { label: 'Years Coding',    value: 2,  suffix: '+', caption: 'Full-stack focused' },
                 { label: 'Tech Certs',      value: 8,         caption: 'IITM + Guvi verified' },
                 { label: 'Uptime Target',   value: 99, suffix: '.9%', caption: 'p95 SLO mindset' },
               ]} />
@@ -858,14 +863,15 @@ function App() {
               <Marquee items={['SaaS Platforms', 'Web Apps', 'Custom Dashboards', 'UI / UX', 'E-Commerce', 'Automation', 'Brand Sites', 'API Design']} />
               <BusinessServices />
               <MetricsRow metrics={[
-                { label: 'Clients Served', value: 12, suffix: '+', caption: 'Across 5 industries' },
-                { label: 'Projects Live',  value: 20, suffix: '+', caption: 'Deployed & monitored' },
-                { label: 'Avg Delivery',   value: 6,  suffix: 'wk', caption: 'MVP to launch' },
-                { label: 'Satisfaction',   value: 100, suffix: '%', caption: 'Retained accounts' },
+                { label: 'Projects Shipped', value: 15, suffix: '+', caption: 'In production today' },
+                { label: 'Technologies',     value: 10, suffix: '+', caption: 'Mastered & applied' },
+                { label: 'Certifications',   value: 8,  suffix: '+', caption: 'IITM + Guvi verified' },
+                { label: 'Avg Delivery',     value: 6,  suffix: 'wk', caption: 'MVP to launch' },
               ]} />
               <ProcessTimeline />
               <ProjectGrid projects={businessProjects} title="Business Case Studies" />
-              <Testimonials />
+              <ProjectGrid projects={business3DProjects} title="3D Experiences" />
+              <BusinessTech />
             </>
           )}
         </div>
@@ -930,7 +936,7 @@ function FilterableProjectGrid({ projects }) {
       <div className="grid lg:grid-cols-2 gap-12 reveal">
         {filtered.map((p, i) => (
           <div key={p.name} className="group relative overflow-hidden rounded-[2.5rem] border border-white/10 aspect-video glass-panel">
-            <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-all duration-1000 scale-110 group-hover:scale-100" />
+            <img src={p.img} alt={p.name} className="w-full h-full object-cover object-center transition-all duration-1000 scale-100 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-12 flex flex-col justify-end backdrop-blur-sm">
               <div className="text-[10px] font-black text-theme tracking-[0.4em] uppercase mb-4">{p.category}</div>
               <h3 className="text-4xl font-black text-white mb-8 uppercase tracking-tighter">{p.name}</h3>
@@ -998,6 +1004,9 @@ function SplitLanding({ onSelect }) {
     <div className="split-landing">
       <div className="split-side side-engineer" onClick={() => onSelect('engineer')}>
         <div className="split-content">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 mb-8 mx-auto shadow-lg shadow-white/10">
+            <img src="./Assets/ProfilePic.jpeg" alt="Surya K" className="w-full h-full object-cover object-top" />
+          </div>
           <h2 className="text-6xl font-black mb-6">SURYA K</h2>
           <p className="text-white/40 font-bold tracking-widest mb-10 uppercase">Software Engineer</p>
           <button className="btn-premium">View Professional Work</button>
@@ -1005,6 +1014,9 @@ function SplitLanding({ onSelect }) {
       </div>
       <div className="split-side side-business" onClick={() => onSelect('business')}>
         <div className="split-content">
+          <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-white/20 mb-8 mx-auto shadow-lg shadow-white/10 bg-white">
+            <img src="./Assets/Logo.jpeg" alt="DevTactix" className="w-full h-full object-contain p-2" />
+          </div>
           <h2 className="text-6xl font-black mb-6">DEVTACTIX</h2>
           <p className="text-white/40 font-bold tracking-widest mb-10 uppercase">Freelance Brand</p>
           <button className="btn-premium">Start A Project</button>
@@ -1134,26 +1146,28 @@ function ProcessTimeline() {
   );
 }
 
-// ─── Testimonials (business) ────────────────────────────────────────────────
-function Testimonials() {
-  const tms = [
-    { quote: "DevTactix delivered our SaaS MVP weeks ahead of schedule — the codebase was clean, tested and easy to extend.", who: "Operations Lead", co: "FreshMart Elite" },
-    { quote: "The dashboard system completely replaced three legacy tools. Our team now ships reports in hours, not days.", who: "Clinic Director", co: "DentalCare OS" },
-    { quote: "Professional, pragmatic and fast. The estate platform is now our primary lead source.", who: "Founder", co: "Skyline Estates" },
+// ─── Business Technology Stack (real, no fake client data) ─────────────────
+function BusinessTech() {
+  const techs = [
+    { name: "React / Next.js", desc: "Modern frontend frameworks for scalable, interactive UIs." },
+    { name: "Node.js / Express", desc: "Robust backend APIs, authentication, and microservices." },
+    { name: "MongoDB / SQL", desc: "Flexible NoSQL and relational database architecture." },
+    { name: "Three.js / WebGL", desc: "Immersive 3D web experiences and interactive visuals." },
+    { name: "Tailwind / CSS", desc: "Pixel-perfect responsive design with modern aesthetics." },
+    { name: "Flutter / Dart", desc: "Cross-platform mobile applications from a single codebase." },
   ];
   return (
     <section className="section-container relative">
       <SectionOrbs />
-      <SectionLabel label="Client Voices" />
-      <div className="grid md:grid-cols-3 gap-8 reveal">
-        {tms.map((t, i) => (
-          <div key={i} className="testimonial-card tilt">
-            <div className="text-6xl font-black font-outfit text-theme/40 leading-none mb-4">“</div>
-            <p className="leading-relaxed mb-8" style={{color: 'var(--ink-700)'}}>{t.quote}</p>
-            <div className="pt-6 border-t border-white/[0.06]">
-              <div className="text-ink-900 font-black text-sm">{t.who}</div>
-              <div className="text-ink-300 text-[10px] font-bold tracking-[0.3em] uppercase mt-1">{t.co}</div>
+      <SectionLabel label="Technology Stack" />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 reveal relative z-10">
+        {techs.map((t, i) => (
+          <div key={i} className="glass-panel p-8 group hover:border-theme/40 transition-all duration-700 hover:-translate-y-2">
+            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-theme mb-6 group-hover:scale-110 transition-transform">
+              <i className="fas fa-code text-xs"></i>
             </div>
+            <div className="text-xl font-black mb-2 uppercase tracking-tighter text-ink-900 group-hover:text-theme transition-colors">{t.name}</div>
+            <p className="text-sm leading-relaxed" style={{color: 'var(--ink-500)'}}>{t.desc}</p>
           </div>
         ))}
       </div>
