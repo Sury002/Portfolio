@@ -281,7 +281,7 @@ function init3DScene(theme) {
   if (isBusiness) {
     // Primary bright golden wave — the main crest layer
     const floor = buildWaveField({
-      cols: 80, rows: 46, spacingX: 0.45, spacingZ: 0.45,
+      cols: 64, rows: 38, spacingX: 0.45, spacingZ: 0.45,
       baseColor: 0x5a2a00, crestColor: 0xffb347,
       size: 0.06, opacity: 1.0,
     });
@@ -292,7 +292,7 @@ function init3DScene(theme) {
 
     // Secondary deeper wave for parallax/depth
     const floor2 = buildWaveField({
-      cols: 55, rows: 32, spacingX: 0.62, spacingZ: 0.62,
+      cols: 42, rows: 26, spacingX: 0.62, spacingZ: 0.62,
       baseColor: 0x2a1400, crestColor: 0xff8800,
       size: 0.05, opacity: 0.55,
     });
@@ -303,7 +303,7 @@ function init3DScene(theme) {
   } else {
     // Engineer — dense cyan particle wave (matches reference)
     const floor = buildWaveField({
-      cols: 80, rows: 46, spacingX: 0.45, spacingZ: 0.45,
+      cols: 64, rows: 38, spacingX: 0.45, spacingZ: 0.45,
       baseColor: 0x0a2a55, crestColor: 0x7fd6ff,
       size: 0.06, opacity: 1.0,
     });
@@ -314,7 +314,7 @@ function init3DScene(theme) {
 
     // Secondary deeper wave
     const floor2 = buildWaveField({
-      cols: 55, rows: 32, spacingX: 0.62, spacingZ: 0.62,
+      cols: 42, rows: 26, spacingX: 0.62, spacingZ: 0.62,
       baseColor: 0x05162e, crestColor: 0x3b82f6,
       size: 0.05, opacity: 0.5,
     });
@@ -354,12 +354,10 @@ function init3DScene(theme) {
   // ── Animation loop ──
   let t = 0, animId, lastFrame = 0;
   let isPageVisible = !document.hidden;
-  let isScrolling = false;
-  let scrollResumeId = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const frameInterval = 1000 / 60;
   function animate(now = 0) {
-    if (!isPageVisible || isScrolling) return;
+    if (!isPageVisible) return;
     animId = requestAnimationFrame(animate);
     if (now - lastFrame < frameInterval) return;
     lastFrame = now;
@@ -446,25 +444,11 @@ function init3DScene(theme) {
 
     renderer.render(scene, camera);
   }
-const onScroll = () => {
-    isScrolling = true;
-    cancelAnimationFrame(animId);
-    animId = 0;
-    window.clearTimeout(scrollResumeId);
-    scrollResumeId = window.setTimeout(() => {
-      isScrolling = false;
-      if (isPageVisible && !reducedMotion.matches && !animId) {
-        lastFrame = 0;
-        animId = requestAnimationFrame(animate);
-      }
-    }, 180);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
   const onVisibilityChange = () => {
     isPageVisible = !document.hidden;
     if (!isPageVisible) {
       cancelAnimationFrame(animId);
-    } else if (!reducedMotion.matches && !isScrolling) {
+    } else if (!reducedMotion.matches) {
       lastFrame = 0;
       animId = requestAnimationFrame(animate);
     }
@@ -488,8 +472,6 @@ const onScroll = () => {
     cancelAnimationFrame(animId);
     window.removeEventListener('resize', onResize);
     window.removeEventListener('mousemove', onMM);
-    window.removeEventListener('scroll', onScroll);
-    window.clearTimeout(scrollResumeId);
     document.removeEventListener('visibilitychange', onVisibilityChange);
     renderer.dispose();
   };
