@@ -354,24 +354,9 @@ function init3DScene(theme) {
   let t = 0, animId, lastFrame = 0;
   let isPageVisible = !document.hidden;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const frameInterval = 1000 / 30;
-  const hero = document.querySelector('main > section');
-  let isSceneVisible = !hero || hero.getBoundingClientRect().bottom > 0;
-  const sceneObserver = hero && 'IntersectionObserver' in window
-    ? new IntersectionObserver(([entry]) => {
-        isSceneVisible = entry.isIntersecting;
-        if (!isSceneVisible) {
-          cancelAnimationFrame(animId);
-          animId = 0;
-        } else if (!document.hidden && !reducedMotion.matches && !animId) {
-          lastFrame = 0;
-          animId = requestAnimationFrame(animate);
-        }
-      }, { threshold: 0.01 })
-    : null;
-  if (sceneObserver) sceneObserver.observe(hero);
+  const frameInterval = 1000 / 60;
   function animate(now = 0) {
-    if (!isPageVisible || !isSceneVisible) return;
+    if (!isPageVisible) return;
     animId = requestAnimationFrame(animate);
     if (now - lastFrame < frameInterval) return;
     lastFrame = now;
@@ -462,7 +447,7 @@ function init3DScene(theme) {
     isPageVisible = !document.hidden;
     if (!isPageVisible) {
       cancelAnimationFrame(animId);
-    } else if (!reducedMotion.matches && isSceneVisible) {
+    } else if (!reducedMotion.matches) {
       lastFrame = 0;
       animId = requestAnimationFrame(animate);
     }
@@ -487,7 +472,6 @@ function init3DScene(theme) {
     window.removeEventListener('resize', onResize);
     window.removeEventListener('mousemove', onMM);
     document.removeEventListener('visibilitychange', onVisibilityChange);
-    sceneObserver?.disconnect();
     renderer.dispose();
   };
 }
@@ -713,8 +697,8 @@ function App() {
     };
     const usesIdleCallback = 'requestIdleCallback' in window;
     const idleId = usesIdleCallback
-      ? window.requestIdleCallback(startScene, { timeout: 2200 })
-      : window.setTimeout(startScene, 900);
+      ? window.requestIdleCallback(startScene, { timeout: 750 })
+      : window.setTimeout(startScene, 250);
     return () => {
       cancelled = true;
       if (usesIdleCallback) window.cancelIdleCallback(idleId);

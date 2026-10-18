@@ -829,12 +829,6 @@ h1, h2 {
 }
 
 ::-webkit-scrollbar { display: none; }
-/* Keep the existing visual direction while reducing expensive animation work. */
-.reveal,
-.reveal-slide-l,
-.reveal-slide-r {
-  transition-duration: 0.65s;
-}
 
 .service-card,
 .metric-card,
