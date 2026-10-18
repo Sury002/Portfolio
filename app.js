@@ -1,7 +1,7 @@
 const { useState, useEffect, useRef, useMemo } = React;
 
 // --- Constants ---
-const RESUME_LINK = "https://drive.google.com/file/d/1qvWBuQ7RTOBkeaMilGquXEPT0Gs-lido/view";
+const RESUME_LINK = "./Assets/SuryaK_Resume_Updated.pdf";
 
 // ─── 3D Scene Manager ────────────────────────────────────────────────────────
 function init3DScene(theme) {
@@ -12,7 +12,7 @@ function init3DScene(theme) {
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.25));
   renderer.toneMapping = THREE.ReinhardToneMapping;
   renderer.toneMappingExposure = isBusiness ? 1.55 : 1.3;
   renderer.setClearColor(0x000000, 0);
@@ -181,7 +181,7 @@ function init3DScene(theme) {
       new THREE.TetrahedronGeometry(0.9, 0),
     ];
     const col = isBusiness ? 0xff9944 : 0x4a90e2;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 6; i++) {
       const g = geoms[i % geoms.length];
       const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({
         color: col, wireframe: true, transparent: true,
@@ -206,7 +206,7 @@ function init3DScene(theme) {
 
   // ── Floating particle dust (soft glowing motes) ──
   const dust = (() => {
-    const n = 260;
+    const n = 140;
     const positions = new Float32Array(n * 3);
     const speeds = new Float32Array(n);
     for (let i = 0; i < n; i++) {
@@ -280,7 +280,7 @@ function init3DScene(theme) {
   if (isBusiness) {
     // Primary bright golden wave — the main crest layer
     const floor = buildWaveField({
-      cols: 120, rows: 70, spacingX: 0.35, spacingZ: 0.35,
+      cols: 80, rows: 46, spacingX: 0.45, spacingZ: 0.45,
       baseColor: 0x5a2a00, crestColor: 0xffb347,
       size: 0.06, opacity: 1.0,
     });
@@ -291,7 +291,7 @@ function init3DScene(theme) {
 
     // Secondary deeper wave for parallax/depth
     const floor2 = buildWaveField({
-      cols: 90, rows: 50, spacingX: 0.5, spacingZ: 0.5,
+      cols: 55, rows: 32, spacingX: 0.62, spacingZ: 0.62,
       baseColor: 0x2a1400, crestColor: 0xff8800,
       size: 0.05, opacity: 0.55,
     });
@@ -302,7 +302,7 @@ function init3DScene(theme) {
   } else {
     // Engineer — dense cyan particle wave (matches reference)
     const floor = buildWaveField({
-      cols: 120, rows: 70, spacingX: 0.35, spacingZ: 0.35,
+      cols: 80, rows: 46, spacingX: 0.45, spacingZ: 0.45,
       baseColor: 0x0a2a55, crestColor: 0x7fd6ff,
       size: 0.06, opacity: 1.0,
     });
@@ -313,7 +313,7 @@ function init3DScene(theme) {
 
     // Secondary deeper wave
     const floor2 = buildWaveField({
-      cols: 90, rows: 50, spacingX: 0.5, spacingZ: 0.5,
+      cols: 55, rows: 32, spacingX: 0.62, spacingZ: 0.62,
       baseColor: 0x05162e, crestColor: 0x3b82f6,
       size: 0.05, opacity: 0.5,
     });
@@ -325,7 +325,7 @@ function init3DScene(theme) {
 
   // ── Starfield ──
   {
-    const count = 500;
+    const count = 220;
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       pos[i*3]   = (Math.random() - 0.5) * 60;
@@ -342,8 +342,6 @@ function init3DScene(theme) {
 
   // ── Animated background nebula via CSS custom property ──
   // We drive a CSS animation on the bg div by updating a data attribute
-  const bgDiv = document.getElementById('theme-bg');
-
   // ── Mouse tracking ──
   let mx = 0, my = 0;
   const onMM = e => {
@@ -353,39 +351,16 @@ function init3DScene(theme) {
   window.addEventListener('mousemove', onMM);
 
   // ── Animation loop ──
-  let t = 0, animId;
-  function animate() {
+  let t = 0, animId, lastFrame = 0;
+  let isPageVisible = !document.hidden;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const frameInterval = 1000 / 30;
+  function animate(now = 0) {
+    if (!isPageVisible) return;
     animId = requestAnimationFrame(animate);
+    if (now - lastFrame < frameInterval) return;
+    lastFrame = now;
     t += 0.006;
-
-    // Animate background nebula via the div's gradient
-    if (bgDiv) {
-      if (isBusiness) {
-        const purpleX = 5 + Math.sin(t * 0.4) * 4;
-        const purpleY = 30 + Math.sin(t * 0.3) * 8;
-        const amberX  = 88 + Math.sin(t * 0.25) * 5;
-        const amberY  = 55 + Math.cos(t * 0.35) * 10;
-        const pulse   = 0.35 + Math.sin(t * 0.5) * 0.08;
-        bgDiv.style.background = `
-          radial-gradient(ellipse 55% 75% at ${purpleX}% ${purpleY}%, rgba(60,0,120,${pulse + 0.1}) 0%, rgba(20,0,50,0.5) 40%, transparent 70%),
-          radial-gradient(ellipse 55% 65% at ${amberX}% ${amberY}%, rgba(60,25,0,${pulse}) 0%, rgba(15,5,0,0.6) 45%, transparent 70%),
-          radial-gradient(ellipse 35% 40% at 50% 0%, rgba(40,0,80,0.25) 0%, transparent 55%),
-          #04010e
-        `;
-      } else {
-        const blueX  = 10 + Math.sin(t * 0.35) * 6;
-        const blueY  = 35 + Math.cos(t * 0.28) * 10;
-        const cyanX  = 88 + Math.sin(t * 0.3) * 5;
-        const cyanY  = 60 + Math.cos(t * 0.4) * 8;
-        const pulse  = 0.28 + Math.sin(t * 0.45) * 0.07;
-        bgDiv.style.background = `
-          radial-gradient(ellipse 55% 75% at ${blueX}% ${blueY}%, rgba(20,60,140,${pulse + 0.1}) 0%, rgba(5,20,60,0.5) 45%, transparent 75%),
-          radial-gradient(ellipse 55% 60% at ${cyanX}% ${cyanY}%, rgba(0,90,140,${pulse}) 0%, rgba(5,20,40,0.55) 45%, transparent 75%),
-          radial-gradient(ellipse 35% 40% at 50% 0%, rgba(30,60,180,0.22) 0%, transparent 55%),
-          #02050f
-        `;
-      }
-    }
 
     // Main-model group rotation — slow, majestic
     group.rotation.y += 0.004;
@@ -468,7 +443,22 @@ function init3DScene(theme) {
 
     renderer.render(scene, camera);
   }
-  animate();
+  const onVisibilityChange = () => {
+    isPageVisible = !document.hidden;
+    if (!isPageVisible) {
+      cancelAnimationFrame(animId);
+    } else if (!reducedMotion.matches) {
+      lastFrame = 0;
+      animId = requestAnimationFrame(animate);
+    }
+  };
+  document.addEventListener('visibilitychange', onVisibilityChange);
+
+  if (reducedMotion.matches) {
+    renderer.render(scene, camera);
+  } else {
+    animate();
+  }
 
   const onResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -481,6 +471,7 @@ function init3DScene(theme) {
     cancelAnimationFrame(animId);
     window.removeEventListener('resize', onResize);
     window.removeEventListener('mousemove', onMM);
+    document.removeEventListener('visibilitychange', onVisibilityChange);
     renderer.dispose();
   };
 }
@@ -557,11 +548,11 @@ function EngineerExperience() {
       role: "Software Engineer 1",
       period: "Jan 2026 - Present",
       points: [
-        "Architected multi-tenant payroll SaaS system with secure database isolation.",
-        "Engineered flexible payroll engine supporting dynamic tax rules and deductions (PF, PT).",
-        "Developed automated document generation systems for payslips and compliance reports.",
-        "Refactored legacy ERP modules, standardizing UI/UX across enterprise planning systems.",
-        "Implemented platform-wide subscription management and tenant control systems."
+        "Delivered full-stack features across multi-tenant ERP, payroll, and HR products using Angular, Node.js, and MongoDB.",
+        "Built project, task, user, and timesheet reporting with analytics, filters, exports, and AG Insights screens.",
+        "Improved payroll workflows for employer cost, professional tax, arrears, leave and attendance, adjustments, payslips, and TDS handling.",
+        "Extended the Flutter timesheet and expense app with geolocation, batch receipt uploads, Gemini OCR, and image compression.",
+        "Built a visual template editor with canvas and property-inspector controls, style isolation, and static-asset versioning."
       ]
     },
     {
@@ -683,10 +674,13 @@ function Certificates() {
 // --- APP ARCHITECTURE ---
 
 function App() {
-  const [mode, setMode] = useState(null);
+  const mode = 'engineer';
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => { setTimeout(() => setLoading(false), 2000); }, []);
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setLoading(false), 500);
+    return () => window.clearTimeout(timeout);
+  }, []);
   useEffect(() => { if (mode) return init3DScene(mode); }, [mode]);
   useEffect(() => {
     const reveal = () => document.querySelectorAll('.reveal, .reveal-slide-l, .reveal-slide-r').forEach(el => {
@@ -779,7 +773,7 @@ function App() {
       )}
       
       <nav className="nav-bar pointer-events-none">
-        <div className="nav-brand pointer-events-auto" onClick={() => setMode(null)}>
+        <div className="nav-brand pointer-events-auto">
           <span className="nav-logo-wrap">
             <img
               src={mode === 'business' ? './Assets/Logo.jpeg' : './Assets/ProfilePic.jpeg'}
@@ -788,12 +782,6 @@ function App() {
             />
           </span>
           <span>{mode === 'engineer' ? 'SURYA K' : 'DEVTACTIX'}</span>
-        </div>
-        <div className="flex gap-10 pointer-events-auto">
-          <button className="nav-switch" onClick={() => setMode(null)}>
-            <span>Switch Side</span>
-            <span className="nav-switch-dot"></span>
-          </button>
         </div>
       </nav>
 
