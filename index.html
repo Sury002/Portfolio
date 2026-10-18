@@ -6,29 +6,27 @@
   <title>Surya K | Software Engineer Portfolio</title>
   <link rel="icon" href="./Assets/ProfilePic.jpeg">
   
-  <!-- Fonts -->
+  <!-- Fonts load without blocking the first paint. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet"></noscript>
   
   <!-- Libraries -->
+  <link rel="stylesheet" href="./tailwind.generated.css">
   <link rel="stylesheet" href="./style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   
-  <!-- 3D rendering; unused animation libraries were removed to reduce blocking requests. -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-  
-  <!-- React Setup -->
-  <script defer src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-  <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <script defer src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Local production libraries avoid runtime JSX compilation and extra CDN lookups. -->
+  <script defer src="./Assets/vendor/react.production.min.js"></script>
+  <script defer src="./Assets/vendor/react-dom.production.min.js"></script>
 </head>
 <body class="bg-[#030303] text-white">
   
   <canvas id="canvas3d"></canvas>
   <div id="root"></div>
 
-  <script type="text/babel" src="app.js"></script>
+  <script defer src="./app.js"></script>
 </body>
 </html>
