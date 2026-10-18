@@ -12,7 +12,8 @@ function init3DScene(theme) {
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.1));
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.35 : 1.75));
   renderer.toneMapping = THREE.ReinhardToneMapping;
   renderer.toneMappingExposure = isBusiness ? 1.55 : 1.3;
   renderer.setClearColor(0x000000, 0);
@@ -353,10 +354,12 @@ function init3DScene(theme) {
   // ── Animation loop ──
   let t = 0, animId, lastFrame = 0;
   let isPageVisible = !document.hidden;
+  let isScrolling = false;
+  let scrollResumeId = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const frameInterval = 1000 / 60;
   function animate(now = 0) {
-    if (!isPageVisible) return;
+    if (!isPageVisible || isScrolling) return;
     animId = requestAnimationFrame(animate);
     if (now - lastFrame < frameInterval) return;
     lastFrame = now;
@@ -443,11 +446,25 @@ function init3DScene(theme) {
 
     renderer.render(scene, camera);
   }
+const onScroll = () => {
+    isScrolling = true;
+    cancelAnimationFrame(animId);
+    animId = 0;
+    window.clearTimeout(scrollResumeId);
+    scrollResumeId = window.setTimeout(() => {
+      isScrolling = false;
+      if (isPageVisible && !reducedMotion.matches && !animId) {
+        lastFrame = 0;
+        animId = requestAnimationFrame(animate);
+      }
+    }, 180);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
   const onVisibilityChange = () => {
     isPageVisible = !document.hidden;
     if (!isPageVisible) {
       cancelAnimationFrame(animId);
-    } else if (!reducedMotion.matches) {
+    } else if (!reducedMotion.matches && !isScrolling) {
       lastFrame = 0;
       animId = requestAnimationFrame(animate);
     }
@@ -471,6 +488,8 @@ function init3DScene(theme) {
     cancelAnimationFrame(animId);
     window.removeEventListener('resize', onResize);
     window.removeEventListener('mousemove', onMM);
+    window.removeEventListener('scroll', onScroll);
+    window.clearTimeout(scrollResumeId);
     document.removeEventListener('visibilitychange', onVisibilityChange);
     renderer.dispose();
   };
